@@ -1,176 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+    <style>.overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .popup {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        max-width: 400px;
+        width: 80%;
+        text-align: center;
+      }
+      
+      .close-btn {
+        margin-top: 10px;
+        cursor: pointer;
+        padding: 5px 10px;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+      
 
-        .main {
-            width: 400px;
-            box-shadow: 0 0 5px #ccc;
-            margin: auto;
-        }
+        .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100; /* Để căn giữa theo chiều dọc */
+}.faded-text {
+  opacity: 0.6; /* Giá trị nằm trong khoảng từ 0 (hoàn toàn trong suốt) đến 1 (không mờ) */
+}
 
-        .input_style {
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            padding: 10px;
-            font-size: 15px;
-        }
-
-        .input_bgr {
-            background-color: #f5f6f7;
-        }
-
-        .flex {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .header {
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        img {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
-        }
-
-        .logo_name {
-            font-size: 30px;
-            font-weight: bold;
-            color: #1178f2;
-        }
-
-        form {
-            padding: 10px;
-        }
-
-        h2 {
-            margin-top: 10px;
-            margin-bottom: 0;
-        }
-
-        .name {
-            margin: 10px 0;
-        }
-
-        .input_name {
-            width: 49%;
-
-        }
-
-        .contact,
-        .password {
-            width: 100%;
-            margin-bottom: 10px;
-        }
-
-        .date,
-        .input_gender {
-            width: 32%;
-            margin-bottom: 10px;
-        }
-
-        span {
-            font-size: 14px;
-            color: #676666;
-        }
-
-        button {
-            color: #fff;
-            font-size: 16px;
-            font-weight: bold;
-            background-color: #00a400;
-            border: none;
-            padding: 8px 40px;
-            border-radius: 5px;
-            margin: 10px 0;
-        }
-
-        .submit {
-            text-align: center;
-        }
+.custom-input {
+  /* ... */
+  padding: 10px 15px; /* Điều chỉnh giá trị để căn lề chữ ở đầu dòng và cuối dòng */
+}
     </style>
 </head>
-
 <body>
-    <div class="main">
-        <div class="header">
-            <div class="logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/640px-Facebook_Logo_%282019%29.png"
-                    alt="Ảnh facebook">
-                <span class="logo_name">Facebook</span>
-            </div>
-            <h2>Đăng ký</h2>
-        </div>
-        <form action="">
-            <div class="name flex">
-                <input class="input_name input_style input_bgr" type="text" placeholder="Họ">
-                <input class="input_name input_style input_bgr" type="text" placeholder="Tên">
-            </div>
+    </div><div class="overlay">
+        <div class="popup"><div class="container">
+            <img style="height: 250px;width: 250px;" src="data:image/png;base64,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" alt="face"></div>
             <div>
-                <input class="contact input_style input_bgr" type="text" placeholder="Số điện thoại hoặc email">
+                <h3>Create a new account
+                </h3>
+                <p class="faded-text">This is a faded text.</p>
             </div>
-            <div>
-                <input class="password input_style input_bgr" type="password" placeholder="Mật khẩu mới">
-            </div>
-            <div class="birthday">
-                <span>Ngày sinh</span>
-                <div class="flex">
-                    <select class="date input_style" name="date" id="">
-                        <option value="1">1</option>
-                        <option value="10">10</option>
-                        <option value="30">30</option>
-                    </select>
-                    <select class="date input_style" name="date" id="">
-                        <option value="1">Tháng 1</option>
-                        <option value="10">Tháng 10</option>
-                        <option value="12">Tháng 12</option>
-                    </select>
-                    <select class="date input_style" name="date" id="">
-                        <option value="2000">2000</option>
-                        <option value="2002">2002</option>
-                        <option value="2003">2003</option>
-                    </select>
-                </div>
+    <form action="">
+        <input type="text" name="" placeholder="first name">
+     <div class="custom-input">  
+         <input type="text" name="" placeholder="Surname"><br>
+        <input type="text" name="" placeholder="Phone number or email address"><br>
+        <input type="number" name="" placeholder="ReEnter phone number or em"><br>
+        <input type="password" name="" placeholder="New password">
 
-            </div>
-            <div class="gender">
-                <span>Giới tính</span>
-                <div class="flex">
-                    <div class="input_gender input_style">
-                        <label for=" female">Nữ</label>
-                        <input name="gender" type="radio" id="female">
-                    </div>
-                    <div class="input_gender input_style">
-                        <label for=" male">Nam</label>
-                        <input name="gender" type="radio" id="male">
-                    </div>
-                    <div class="input_gender input_style">
-                        <label for=" other">Tuỳ chỉnh</label>
-                        <input name="gender" type="radio" id="other">
-                    </div>
-                </div>
+    </form></div>
+    <h2>Birth day</h2>
+    <select id="ngay sinh"name="ngay sinh">
+        <option value="1">1</option>
+        <option value="2">2</option>
+    </select>
+    <select id="thang"name="thang">
+        <option value="mot">mot</option>
+        <option value="hai">hai</option>
+    </select>
+    <select id="nnam"name="nam">
+        <option value="2000">2000</option>
+        <option value="2">2001</option>
+    </select><br>
 
-            </div>
-            <div class="submit">
-                <button>Đăng Ký</button>
-            </div>
-        </form>
-    </div>
+    <label for="">why do I need to provide my date of birth?</label><br>
+    <p class="faded-text">Gender</p>
+    <input type="radio" name="ab" id="ab">male
+    <input type="radio" >Femqle<br>
+    <input type="submit"value="Create account">
+    
+</form> </div>
+</div>
 </body>
-
 </html>
