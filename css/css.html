@@ -2,48 +2,56 @@
 <html>
 <head>
 <style>
-body {
-  background-image: url("data:image/jpeg;base64,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  ");
-  
-}
-div {
-  background-color: rgb(89, 94, 89);
-}
-
-div.first {
-  opacity: 0.1;
+p.one {
+  border-style: solid;
+  border-width: 10px;
+  background-color: antiquewhite;
+  border-bottom: 2px solid red;
+  border-radius: 100px;
+  padding: 5px;
 }
 
-div.second {
-  opacity: 0.3;
+p.two {
+  border-style: solid;
+  border-width: medium;
+
 }
 
-div.third {
-  opacity: 0.6;
+p.three {
+  border-style: dotted;
+  border-width: 2px;
+}
+
+p.four {
+  border-style: dotted;
+  border-width: thick;
+}
+
+p.five {
+  border-style: double;
+  border-width: 15px;
+}
+
+p.six {
+  border-style: double;
+  border-width: 1px;
 }
 </style>
 </head>
 <body>
 
-<h1>Transparent Boxes</h1>
+<h2>The border-width Property</h2>
+<p>This property specifies the width of the four borders:</p>
 
-<p>When using the opacity property to add transparency to the background of an element, all of its child elements become transparent as well. This can make the text inside a fully transparent element hard to read:</p>
+<p class="one">1</p>
+<p class="two">2.</p>
+<p class="three">S3.</p>
+<p class="four">44.</p>
+<p class="five">5.</p>
+<p class="six">6.</p>
 
-<div class="first">
-  <h1>opacity 0.1</h1>
-</div>
-
-<div class="second">
-  <h1>opacity 0.3</h1>
-</div>
-
-<div class="third">
-  <h1>opacity 0.6</h1>
-</div>
-
-<div>
-  <p>opacity 1 (default)</p>
-</div>
+<p><b>Note:</b> The "border-width" property does not work if it is used alone. 
+Always specify the "border-style" property to set the borders first.</p>
 
 </body>
 </html>
