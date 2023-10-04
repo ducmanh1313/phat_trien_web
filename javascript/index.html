@@ -1,27 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <script src="counter3.js"></script>
-    <title>Vũ Đức Mạnh -2121050430</title>
-    <h1>Vũ Đức Mạnh-2121050430</h1>
+    <title>Tính Tổng Bằng JavaScript</title>
     <script>
-        document.addEventListener('DOMContentLoaded',function(){
-            document.querySelector('#form').onsubmit = sayHello;
-        });
-        function sayHello(){
-            const name = document.querySelector('#name').value;
-            alert('Hello ${name}!');
+        function tinhTong() {
+            var so1 = parseFloat(document.getElementById("so1").value);
+            var so2 = parseFloat(document.getElementById("so2").value);
+            var tong = so1 + so2;
+            
+            document.getElementById("ketqua").innerHTML =   tong; 
         }
     </script>
-
 </head>
 <body>
-    <h1 id="counter">0</h1>
-    <button>Click here!</button>
-    <form id="form">
-        <input type="text" id="name" autofocus placeholder="Name">
-        <input type="submit">
-    </form>
-
+    <label for="so1">Nhập số a </label>
+    <input type="text" id="so1">
+    <br>
+    <label for="so2">Nhập số b </label>
+    <input type="text" id="so2">
+    <br>
+    <p>Tổng a và b là :</p>
+    <p id="ketqua"></p>
+    <button onclick="tinhTong()">Tính Tổng</button>
 </body>
 </html>
