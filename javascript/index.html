@@ -4,17 +4,18 @@
     <h1>Vũ Đức Mạnh-2121050430</h1>
     <script>
         function hello(){
-            alert('welcome to JS!');
             document.querySelector('h1').innerHTML = '2nd JavaScrip!';
+            counter++;
+            document.querySelector('#counter').innerHTML = icounter;
         }
     </script>
     <title>1st javaScrip</title>
 </head>
 <body>
-    <h2>1st javascript</h2>
-    <button onclick="hello()"> </button>
     <h1>1st javascript</h1>
     <button onclick="hello()">Click here! </button>
+    <h1 id="counter">0</h1>
+    <button onclick="counter()">Click here! </button>
 
 </body>
 </html>
