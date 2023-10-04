@@ -3,19 +3,13 @@
 <head>
     <h1>Vũ Đức Mạnh-2121050430</h1>
     <script>
-        function hello(){
-            document.querySelector('h1').innerHTML = '2nd JavaScrip!';
+     function hello(){
             counter++;
             document.querySelector('#counter').innerHTML = icounter;
+
+            if(counter %10==0){
+                alert('counter is at ${counter}!');
+            }
         }
     </script>
     <title>1st javaScrip</title>
-</head>
-<body>
-    <h1>1st javascript</h1>
-    <button onclick="hello()">Click here! </button>
-    <h1 id="counter">0</h1>
-    <button onclick="counter()">Click here! </button>
-
-</body>
-</html>
