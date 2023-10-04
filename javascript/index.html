@@ -1,15 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <h1>Vũ Đức Mạnh-2121050430</h1>
+    <h1>Vux Đức Mạnh -2121050430</h1>
     <script>
-     function hello(){
+        function hello(){
+        document.addEventListener('DOMContentLoaded',function(){
+            document.querySelector('button'.onclick=count);
+
+        })}
+        let counter = 0;
+        function count(){
             counter++;
             document.querySelector('#counter').innerHTML = icounter;
 
             if(counter %10==0){
+            document.querySelector('#counter').innerHTML =counter;
+             if(counter% 10==0){
                 alert('counter is at ${counter}!');
             }
+             }
         }
     </script>
     <title>1st javaScrip</title>
+    <title>Vũ Đức Mạnh-2121050430</title>
+
+</head>
+<body>
+    <h1 id="counter">0</h1>
+    <button onclick="counter()">Click here! </button>
+
+
+</body>
+</html>
