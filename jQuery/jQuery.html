@@ -5,21 +5,20 @@
 <script>
 $(document).ready(function(){
   $("button").click(function(){
-    $("#w3s").attr({
-      "href" : "https://www.w3schools.com/jquery/",
-      "title" : "W3Schools jQuery Tutorial"
+    $("#w3s").attr("href", function(i, origValue){
+      return origValue + "/jquery/"; 
     });
-  });
+  }); 
 });
 </script>
 </head>
 <body>
 
-<p><a href="https://www.w3schools.com" title="some title" id="w3s">lick chỗ học</a></p>
+<p><a href="https://www.w3schools.com" id="w3s">W3Schools.com</a></p>
 
-<button>VŨ Đức Mạnh</button>
+<button>Vũ Đức Mạnh</button>
 
-<p>Mouse over the link to see that the href attribute has changed and a title attribute is set.</p>
+<p>2121050430</p>
 
 </body>
 </html>
