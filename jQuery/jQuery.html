@@ -5,22 +5,27 @@
 <script>
 $(document).ready(function(){
   $("button").click(function(){
-    $("#div1").fadeOut();
-    $("#div2").fadeOut("slow");
-    $("#div3").fadeOut(3000);
+    $("#div1").fadeToggle();
+    $("#div2").fadeToggle("slow");
+    $("#div3").fadeToggle(3000);
   });
 });
 </script>
 </head>
 <body>
 
-<p>Vũ Đức Mạnh</p>
+    <p>Vũ Đức Mạnh</p>
 
-<button>2121050430</button><br><br>
+    <button>2121050430</button><br><br>
+    
 
-<div id="div1" style="width:80px;height:80px;background-color:red;"></div><br>
-<div id="div2" style="width:80px;height:80px;background-color:green;"></div><br>
+<div id="div1" style="width:80px;height:80px;background-color:red;"></div>
+<br>
+<div id="div2" style="width:80px;height:80px;background-color:green;"></div>
+<br>
 <div id="div3" style="width:80px;height:80px;background-color:blue;"></div>
 
 </body>
 </html>
+
+
