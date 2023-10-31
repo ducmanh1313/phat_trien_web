@@ -5,27 +5,26 @@
 <script>
 $(document).ready(function(){
   $("#btn1").click(function(){
-    $("#test1").text("Hello world!");
+    $("#test1").text(function(i, origText){
+      return "Old text: " + origText + " New text: Hello world! (index: " + i + ")"; 
+    });
   });
+
   $("#btn2").click(function(){
-    $("#test2").html("<b>Hello world!</b>");
-  });
-  $("#btn3").click(function(){
-    $("#test3").val("Dolly Duck");
+    $("#test2").html(function(i, origText){
+      return "Old html: " + origText + " New html: Hello <b>world!</b> (index: " + i + ")"; 
+    });
   });
 });
 </script>
 </head>
 <body>
 
-<p id="test1">Vũ Đức Mạnh</p>
-<p id="test2">2121050430</p>
+<p id="test1">Vũ <b>Đức</b> Mạnh</p>
+<p id="test2">2121 <b>050430</b> .</p>
 
-<p>Input field: <input type="text" id="test3" value="Mickey Mouse"></p>
-
-<button id="btn1">Set Text</button>
-<button id="btn2">Set HTML</button>
-<button id="btn3">Set Value</button>
+<button id="btn1">Show Old/New Text</button>
+<button id="btn2">Show Old/New HTML</button>
 
 </body>
 </html>
