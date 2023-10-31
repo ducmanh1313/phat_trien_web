@@ -4,15 +4,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-  $("#btn1").click(function(){
-    $("#test1").text(function(i, origText){
-      return "Old text: " + origText + " New text: Hello world! (index: " + i + ")"; 
-    });
-  });
-
-  $("#btn2").click(function(){
-    $("#test2").html(function(i, origText){
-      return "Old html: " + origText + " New html: Hello <b>world!</b> (index: " + i + ")"; 
+  $("button").click(function(){
+    $("#w3s").attr({
+      "href" : "https://www.w3schools.com/jquery/",
+      "title" : "W3Schools jQuery Tutorial"
     });
   });
 });
@@ -20,11 +15,11 @@ $(document).ready(function(){
 </head>
 <body>
 
-<p id="test1">Vũ <b>Đức</b> Mạnh</p>
-<p id="test2">2121 <b>050430</b> .</p>
+<p><a href="https://www.w3schools.com" title="some title" id="w3s">lick chỗ học</a></p>
 
-<button id="btn1">Show Old/New Text</button>
-<button id="btn2">Show Old/New HTML</button>
+<button>VŨ Đức Mạnh</button>
+
+<p>Mouse over the link to see that the href attribute has changed and a title attribute is set.</p>
 
 </body>
 </html>
