@@ -1,29 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() { 
-            document.querySelector('#new-task').onsubmit=function(){
-                const li = document.createElement('li');
-                li.innerHTML = document.querySelector(.'#task').value;
-                document.querySelector('#tasks').append(li);
-                document.querySelector('#task').value='';
-                return false;
-            };
-        });
-    </script>
+    <title>Tasks</title>
 </head>
 <body>
-    <h1 id="hello">Vũ Đức Mạnh</h1>
-    
+    <h1>Vũ Đức Mạnh</h1>
     <ul id="tasks"></ul>
     <form id="new-task">
-        <input type="text" id="task" autofocus placeholder="new-task">
-        <input type="submit"> 
-
+        <input type="text" id="task" autofocus placeholder="New Task">
+        <input type="submit" id="submit">
     </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            document.querySelector('#submit').disabled = true;
+            
+            document.querySelector('#task').addEventListener('keyup', function(){
+                document.querySelector('#submit').disabled = false;
+            });
+            
+            document.querySelector('#new-task').addEventListener('submit', function(e){
+                e.preventDefault();
+
+                const taskValue = document.querySelector('#task').value;
+                const li = document.createElement('li');
+                li.innerHTML = taskValue;
+
+                document.querySelector('#tasks').appendChild(li);
+                document.querySelector('#task').value = '';
+                document.querySelector('#submit').disabled = true;
+            });
+        });
+    </script>
 </body>
 </html>
